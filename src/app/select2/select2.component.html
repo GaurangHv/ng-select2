@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+        <form [formGroup]="invoiceForm">
+          <div formArrayName="itemRows">
+          <div *ngFor="let itemrow of invoiceForm.controls.itemRows.controls | slice:0:5; let i=index"  [formGroupName]="i">
+          <h4>No. #{{ i + 1 }}</h4>
+          <div class="form-group">
+          <select2 [data]="exampleData" [width]="300"></select2>
+          &nbsp; <button type="button" (click)="addNewRow()" class="btn btn-primary glyphicon glyphicon-plus"></button>
+          &nbsp; <button *ngIf="invoiceForm.controls.itemRows.controls.length > 1" (click)="deleteRow(i)" class="btn btn-danger glyphicon glyphicon-remove"></button>
+          </div>
+          </div>
+          </div>
+        </form>
+
+    <!-- <button class="btn">Save</button>
+    <div>
+      <h3>{{invoiceForm.value | json}}</h3>
+    </div> -->
+    </div>
+  </div>
+</div>
