@@ -68,7 +68,6 @@ export class Select2Component implements OnInit {
       // list all your form controls here, which belongs to your form array
       itemname: ['']
       });
-
     }
 
 }

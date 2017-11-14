@@ -7,13 +7,16 @@
           <h4>No. #{{ i + 1 }}</h4>
           <div class="form-group">
           <select2 [data]="exampleData" [width]="300"></select2>
-          &nbsp; <button type="button" (click)="addNewRow()" class="btn btn-primary glyphicon glyphicon-plus"></button>
-          &nbsp; <button *ngIf="invoiceForm.controls.itemRows.controls.length > 1" (click)="deleteRow(i)" class="btn btn-danger glyphicon glyphicon-remove"></button>
+
+          &nbsp; <button *ngIf="invoiceForm.controls.itemRows.controls.length > 0" (click)="deleteRow(i)" class="btn btn-sm btn-danger glyphicon glyphicon-remove"></button>
           </div>
+          </div> <button type="button" (click)="addNewRow()" class="btn btn-sm btn-primary glyphicon glyphicon-plus"></button>
           </div>
+          <br><button type="button" class="btn btn-info">Show</button>
+          <br><br><div >
+            All values show here
           </div>
         </form>
-
     <!-- <button class="btn">Save</button>
     <div>
       <h3>{{invoiceForm.value | json}}</h3>
